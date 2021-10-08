@@ -44,11 +44,21 @@ use Cassandra_LaLiga;
 
 -- 1
 -- Partidos de X Temporada donde Y equipo ha jugado como local
+-- Respuesta:
+-- select * from match_local where season = 'XXXX-YYYY' and local_team = 'ZZZZ';
 
 select *
-from match 
+from match_local 
 where season = '1979-1980'
 and local_team = 'Betis'
-and visiting_team != 'Betis';
+;
 
- select * from movie where launch_date = 'YYY' and genre = 'XXX';
+-- 2
+--  Partidos de X Temporada donde Y equipo ha jugado como visitante
+-- Respuesta:
+-- select * from match_local where season = 'XXXX-YYYY' and local_team = 'ZZZZ';
+
+select *
+from match_visiting
+where season = '1981-1982'
+and visiting_team = 'Osasuna';

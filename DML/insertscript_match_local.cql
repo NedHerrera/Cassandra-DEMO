@@ -97,6 +97,9 @@ insert into match_local (match_date, season, game_date_number, local_team, visit
 insert into match_local (match_date, season, game_date_number, local_team, visiting_team) values ('25/11/1979','1979-1980',11,'Hércules','Salamanca');
 insert into match_local (match_date, season, game_date_number, local_team, visiting_team) values ('25/11/1979','1979-1980',11,'Las Palmas','Rayo Vallecano');
 insert into match_local (match_date, season, game_date_number, local_team, visiting_team) values ('25/11/1979','1979-1980',11,'CD Málaga','Zaragoza');
+
+
+
 insert into match_local (match_date, season, game_date_number, local_team, visiting_team) values ('25/11/1979','1979-1980',11,'Sevilla','AD Almería');
 insert into match_local (match_date, season, game_date_number, local_team, visiting_team) values ('2/12/1979','1979-1980',12,'AD Almería','Atlético de Madrid');
 insert into match_local (match_date, season, game_date_number, local_team, visiting_team) values ('2/12/1979','1979-1980',12,'Barcelona','Las Palmas');
