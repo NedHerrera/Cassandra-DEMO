@@ -1,30 +1,5 @@
 use Cassandra_LaLiga;
 
-
- CREATE TABLE score (
-        match_date text,
-        season text,
-        game_date_number int,
-        local_team text,
-        visiting_team text,
-        local_team_score int,
-        visiting_team_score int,
-        PRIMARY KEY ((local_team,visiting_team, season) , match_date)
- ) WITH CLUSTERING ORDER BY(match_date asc);
-
-
-  CREATE TABLE big_victory (
-        match_date text,
-        season text,
-        game_date_number int,
-        local_team text,
-        visiting_team text,
-        local_team_score int,
-        visiting_team_score int,
-        PRIMARY KEY ((local_team_score, visiting_team_score) , season)
- ) WITH CLUSTERING ORDER BY(season asc);
-
-
 -- 1
 -- Partidos de X Temporada donde Y equipo ha jugado como local
 -- Respuesta:
@@ -51,11 +26,31 @@ and visiting_team = 'Betis'
 --  Marcadores finales para los partidos de X temporada donde han participado los equipos Y y Z
 --  Marcadores tanto de la primera vuelta como de la segunda
 -- Respuesta:
--- 
+-- select * from score where local_team in ('Y','Z') and visiting_team in ('Y','Z') and season = 'XXX1-XXX2';
 
 select *
 from score
-where local_team = 'Betis'
-and visiting_team = 'Zaragoza'
+where 
+local_team in ('Zaragoza','Betis') and visiting_team in ('Zaragoza','Betis')
 and season = '1979-1980'
 ;
+
+
+-- 4
+-- Partido donde se registre la victoria más abultada de X temporada
+-- Respuesta
+-- 
+
+  CREATE TABLE big_victory (
+        match_date text,
+        season text,
+        game_date_number int,
+        local_team text,
+        visiting_team text,
+        local_team_score int,
+        visiting_team_score int,
+        PRIMARY KEY ((local_team_score, visiting_team_score, season) , match_date)
+ ) WITH CLUSTERING ORDER BY(match_date asc);
+
+ select *
+ from big_victory
