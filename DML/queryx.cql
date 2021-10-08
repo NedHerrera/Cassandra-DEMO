@@ -41,7 +41,14 @@ and season = '1979-1980'
 -- Respuesta
 -- 
 
-  CREATE TABLE big_victory (
+-- :(
+
+
+
+-- 5
+-- Rival de X equipo para Y jornada de Z temporada 
+
+  CREATE TABLE rival (
         match_date text,
         season text,
         game_date_number int,
@@ -49,8 +56,5 @@ and season = '1979-1980'
         visiting_team text,
         local_team_score int,
         visiting_team_score int,
-        PRIMARY KEY ((local_team_score, visiting_team_score, season) , match_date)
+        PRIMARY KEY ((local_team, visiting_team, season, game_date_number) , match_date)
  ) WITH CLUSTERING ORDER BY(match_date asc);
-
- select *
- from big_victory
