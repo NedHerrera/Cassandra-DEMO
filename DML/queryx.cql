@@ -56,9 +56,16 @@ and local_team = 'Betis'
 -- 2
 --  Partidos de X Temporada donde Y equipo ha jugado como visitante
 -- Respuesta:
--- select * from match_local where season = 'XXXX-YYYY' and local_team = 'ZZZZ';
+-- select * from match_visiting where season = 'XXXX-YYYY' and visiting_team = 'ZZZZ';
 
 select *
-from match_visiting
-where season = '1981-1982'
-and visiting_team = 'Osasuna';
+from match_visiting 
+where season = '1979-1980'
+and visiting_team = 'Betis'
+;
+
+-- 3 
+--  Marcadores finales para los partidos de X temporada donde han participado los equipos Y y Z
+--  Marcadores tanto de la primera vuelta como de la segunda
+-- Respuesta:
+-- 
