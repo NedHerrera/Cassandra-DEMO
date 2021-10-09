@@ -52,5 +52,6 @@ use Cassandra_LaLiga;
         visiting_team text,
         local_team_score int,
         visiting_team_score int,
-        PRIMARY KEY ((local_team, visiting_team, season, game_date_number) , match_date)
- ) WITH CLUSTERING ORDER BY(match_date asc);
+        game_match int,
+        PRIMARY KEY ((local_team, season) , game_match)
+ ) WITH CLUSTERING ORDER BY(game_match asc);

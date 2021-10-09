@@ -58,3 +58,12 @@ and season = '1979-1980'
         visiting_team_score int,
         PRIMARY KEY ((local_team, visiting_team, season, game_date_number) , match_date)
  ) WITH CLUSTERING ORDER BY(match_date asc);
+ 
+
+select *
+from rival
+where 
+local_team in ('Zaragoza') and visiting_team in ('Zaragoza')
+and season = '1979-1980'
+and game_date_number = 4
+;
