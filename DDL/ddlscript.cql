@@ -40,9 +40,9 @@ use Cassandra_LaLiga;
         visiting_team text,
         local_team_score int,
         visiting_team_score int,
-        PRIMARY KEY ((season, local_team_score) , match_date)
- ) WITH CLUSTERING ORDER BY(match_date asc);
-
+        game_match int,
+        PRIMARY KEY ((season, local_team_score) , game_match)
+ ) WITH CLUSTERING ORDER BY(game_match asc);
 
    CREATE TABLE rival (
         match_date text,
@@ -53,5 +53,5 @@ use Cassandra_LaLiga;
         local_team_score int,
         visiting_team_score int,
         game_match int,
-        PRIMARY KEY ((local_team, season) , game_match)
+        PRIMARY KEY ((local_team, season, game_date_number) , game_match)
  ) WITH CLUSTERING ORDER BY(game_match asc);
